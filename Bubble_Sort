@@ -1,0 +1,46 @@
+#include <iostream>
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+//For printing array elements after sorting
+
+void displayArray(int * array, int size) {
+  cout << "Array after sorting->" << endl;
+
+  for (int i = 0; i < size; i++) {
+    cout << array[i] << " ";
+  }
+}
+
+//Bubble Sort implementation
+
+void bubbleSort(int * array, int size) {
+  int i, j;
+  for (i = 0; i < size - 1; i++) {
+    for (j = 0; j < size - 1 - i; j++) {
+      if (array[j] > array[j + 1])
+        swap(array[j], array[j + 1]); //Swapping items
+    }
+    //For Showing Sorting Process
+    cout << "Sorting Process" << endl;
+    for (int k = 0; k < size; k++) {
+      cout << array[k] << " ";
+    }
+    cout << endl;
+
+  }
+  displayArray(array, size);
+}
+int main() {
+  int size;
+  cout << "Enter Array Size" << endl;
+  cin >> size;
+  int array[size];
+  for (int i = 0; i < size; i++) {
+    cin >> array[i];
+
+  }
+  bubbleSort(array, size);
+}
